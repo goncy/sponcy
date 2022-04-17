@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }),
       );
 
-      return response.redirect("/");
+      return response.redirect(process.env.NEXT_PUBLIC_APP_URL as string);
     } catch (error) {
       return response.status(500).json({error});
     }
